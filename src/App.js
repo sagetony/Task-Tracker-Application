@@ -4,7 +4,7 @@ import Tasks from "./components/Tasks";
 function App() {
   const [tasks, setTasks] = useState([
     {id:1, text:'Doctor Sage', day: 'Feb, 22nd, 2022', reminder: true}, 
-    {id:2, text:'Meeting Sage', day: 'May, 2nd, 2022', reminder: true}
+    {id:2, text:'Meeting Sage', day: 'May, 2nd, 2022', reminder: false}
   ])
 
   const deleteTask = (id) => {
@@ -14,7 +14,7 @@ function App() {
   }
 
   const toggleTask = (id) => {
-    setTasks(tasks.map((task) => ))
+    setTasks(tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task ))
   }
   return (
     <div className="container">
